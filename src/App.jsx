@@ -1,8 +1,15 @@
+import { Suspense } from "react";
 import "./App.css";
 import Count from "./Count";
 import ToggleText from "./ToggleText";
+import Employees from "./Employees";
 
 function App() {
+  const fetchEmployees = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    return response.json();
+  };
+  const employeeResponse = fetchEmployees();
   return (
     <>
       <h3>Practice Task</h3>
@@ -10,6 +17,10 @@ function App() {
       <Count></Count>
 
       <ToggleText></ToggleText>
+
+      <Suspense fallback={<p>Employee Data Loading . . .</p>}>
+        <Employees employeeResponse={employeeResponse}></Employees>
+      </Suspense>
     </>
   );
 }

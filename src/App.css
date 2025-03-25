@@ -45,3 +45,13 @@
   border: 2px solid salmon;
   margin-top: 2px;
 }
+
+.employee {
+  border: 2px dashed goldenrod;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+span {
+  font-weight: bold;
+}
