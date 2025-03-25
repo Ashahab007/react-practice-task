@@ -19,6 +19,7 @@ const Employees = ({ employeeResponse }) => {
         marginTop: "10px",
         paddingRight: "50px",
         borderRadius: "10px",
+        textAlign: "left",
       }}
     >
       <h5>Total Employees: {employees.length}</h5>
