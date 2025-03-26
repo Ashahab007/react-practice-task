@@ -26,7 +26,7 @@ const ToggleText = () => {
     >
       <h5>Show/ Hide Text App</h5>
 
-      <h3 style={{ color: "red" }}>{text}</h3>
+      <h3 className="text-red-500 font-bold text-xl py-4">{text}</h3>
       <button onClick={toggleBtn}>SHow/ Hide</button>
     </div>
   );

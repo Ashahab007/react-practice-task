@@ -6,8 +6,15 @@ import Employees from "./Employees";
 
 function App() {
   const fetchEmployees = async () => {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
-    return response.json();
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/users"
+      );
+      return response.json();
+    } catch (error) {
+      // throw Error("Error occured");
+      console.log(error);
+    }
   };
   const employeeResponse = fetchEmployees();
   return (

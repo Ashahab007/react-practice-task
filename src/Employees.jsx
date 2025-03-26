@@ -7,7 +7,6 @@ const Employees = ({ employeeResponse }) => {
   const employees = use(employeeResponse);
   console.log(employees);
 
-  //   const [username] = employees;
   console.log("Username: ", employees[0].username);
   console.log("Company Name: ", employees[0].company.name);
   console.log("City: ", employees[0].address.city);
