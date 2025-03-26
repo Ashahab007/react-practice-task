@@ -7,9 +7,10 @@ import { ErrorBoundary } from "react-error-boundary";
 
 // ! To catch error
 /***
- * 1. In terminal run npm i react-error-boundary
- * 2. then use  <ErrorBoundary> component over the selected section
- * 3. Now import { ErrorBoundary } from "react-error-boundary"
+ * 1. In terminal run npm i react-error-boundary.
+ * 2. then use  <ErrorBoundary> component over the selected section.
+ * 3. Now import { ErrorBoundary } from "react-error-boundary".
+ * 4. Sometimes it needs to restart the server to work it perfectly.
  * */
 
 function App() {
