@@ -3,18 +3,19 @@ import "./App.css";
 import Count from "./Count";
 import ToggleText from "./ToggleText";
 import Employees from "./Employees";
+import { ErrorBoundary } from "react-error-boundary";
+
+// ! To catch error
+/***
+ * 1. In terminal run npm i react-error-boundary
+ * 2. then use  <ErrorBoundary> component over the selected section
+ * 3. Now import { ErrorBoundary } from "react-error-boundary"
+ * */
 
 function App() {
   const fetchEmployees = async () => {
-    try {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/users"
-      );
-      return response.json();
-    } catch (error) {
-      // throw Error("Error occured");
-      console.log(error);
-    }
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    return response.json();
   };
   const employeeResponse = fetchEmployees();
   return (
@@ -24,10 +25,11 @@ function App() {
       <Count></Count>
 
       <ToggleText></ToggleText>
-
-      <Suspense fallback={<p>Employee Data Loading . . .</p>}>
-        <Employees employeeResponse={employeeResponse}></Employees>
-      </Suspense>
+      <ErrorBoundary fallback={<p>Something went wrong.....</p>}>
+        <Suspense fallback={<p>Employee Data Loading . . .</p>}>
+          <Employees employeeResponse={employeeResponse}></Employees>
+        </Suspense>
+      </ErrorBoundary>
     </>
   );
 }
